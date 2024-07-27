@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Linux Terminal Simulator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based simulation of a Linux terminal, featuring a realistic interface with keyboard sound effects and several built-in commands.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Simulated Linux terminal interface
+- Customizable keyboard sound effects with three different options
+- Built-in commands: help, date, echo, clear, fortune
+- Sound toggle functionality
+- Responsive design using Tailwind CSS
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (v12.0.0 or later)
+- npm (v6.0.0 or later)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/linux-terminal-simulator.git
+   cd linux-terminal-simulator
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-### `npm run build`
+3. Add sound effect files:
+   Place three MP3 files for keyboard sounds in the `public` folder:
+   - `keyboard-sound-1.mp3`
+   - `keyboard-sound-2.mp3`
+   - `keyboard-sound-3.mp3`
+   - `keyboard-sound-4.mp3`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+- Type commands in the terminal input and press Enter to execute.
+- Use the sound toggle button or the `sound` command to enable/disable keyboard sounds.
+- Use the `soundeffect` command to switch between different keyboard sound effects.
+- Type `help` to see a list of available commands.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Available Commands
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `help`: Show available commands
+- `date`: Display current date and time
+- `date +FORMAT`: Display date in specified format
+- `clear`: Clear the terminal
+- `echo [text]`: Display a line of text
+- `fortune`: Display a random quote
+- `sound`: Toggle keyboard sound effects
+- `soundeffect [1-3]`: Switch between different keyboard sound effects
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+linux-terminal-simulator/
+│
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   ├── keyboard-sound-1.mp3
+│   ├── keyboard-sound-2.mp3
+│   └── keyboard-sound-3.mp3
+│
+├── src/
+│   ├── components/
+│   │   └── LinuxTerminal.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+│
+├── package.json
+├── package-lock.json
+├── README.md
+├── tailwind.config.js
+└── postcss.config.js
+```
 
-## Learn More
+## Customization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- To modify the available commands or add new ones, edit the `processCommand` function in `src/components/LinuxTerminal.js`.
+- To change the terminal's appearance, modify the Tailwind CSS classes in the component's JSX.
+- To add or change sound effects, replace the MP3 files in the `public` folder and update the `soundEffects` array in `LinuxTerminal.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+[MIT](https://choosealicense.com/licenses/mit/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Acknowledgements
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
+- Icons are provided by [Lucide](https://lucide.dev/).
+- Sound effects should be credited according to their respective licenses.
